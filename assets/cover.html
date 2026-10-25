@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<style>
+  * { margin:0; padding:0; box-sizing:border-box; }
+  html,body { width:1600px; height:1200px; }
+  body {
+    font-family: "PingFang SC","Hiragino Sans GB","STHeiti",sans-serif;
+    background:#FFF6DF;
+    position:relative; overflow:hidden;
+    -webkit-font-smoothing:antialiased;
+  }
+  /* 背景装饰 */
+  .blob1 { position:absolute; width:900px; height:900px; border-radius:50%;
+    background:radial-gradient(circle at 50% 50%, #FFC72C 0%, #FFD85E 55%, rgba(255,246,223,0) 72%);
+    right:-260px; top:-300px; opacity:.85; }
+  .blob2 { position:absolute; width:520px; height:520px; border-radius:50%;
+    background:#DA291C; opacity:.06; left:-180px; bottom:-220px; }
+  .grid { position:absolute; inset:0;
+    background-image:linear-gradient(rgba(0,0,0,.028) 1px, transparent 1px);
+    background-size:100% 64px; }
+
+  .wrap { position:relative; width:1600px; height:1200px; padding:60px 74px;
+    display:flex; align-items:center; gap:44px; }
+
+  /* 左栏 */
+  .left { width:722px; flex:0 0 722px; }
+  .badge { display:inline-flex; align-items:center; gap:14px;
+    background:#DA291C; color:#fff; font-size:27px; font-weight:700;
+    padding:14px 26px; border-radius:999px; letter-spacing:.5px; }
+  .badge .dot { width:14px; height:14px; border-radius:50%; background:#FFC72C; }
+
+  h1 { font-size:124px; line-height:1.02; font-weight:800; color:#171310;
+    letter-spacing:-3px; margin-top:44px; }
+  h1 .gold { color:#DA291C; }
+  .en { margin-top:22px; font-size:44px; font-weight:700; color:#8A7A4E;
+    letter-spacing:8px; font-family:"Avenir Next","Helvetica Neue",sans-serif; }
+
+  .sub { margin-top:30px; font-size:43px; line-height:1.5; font-weight:600;
+    color:#3B342A; max-width:740px; }
+  .sub b { color:#DA291C; }
+
+  .chips { margin-top:52px; display:flex; flex-wrap:wrap; gap:18px; }
+  .chip { font-size:29px; font-weight:600; color:#2A241C;
+    background:#fff; border:2px solid #E8DCB8; border-radius:16px;
+    padding:16px 26px; box-shadow:0 4px 0 #EADFC0; }
+  .chip.red { background:#DA291C; color:#fff; border-color:#DA291C; box-shadow:0 4px 0 #B71E13; }
+
+  .foot { margin-top:56px; font-size:24px; color:#8C8163; font-weight:500; }
+
+  /* 右栏卡片 */
+  .card { width:600px; flex:0 0 600px; background:#fff; border-radius:28px;
+    box-shadow:0 30px 70px rgba(60,40,0,.20), 0 6px 0 #EFE2BD;
+    overflow:hidden; border:1px solid #EFE4C6; transform:rotate(-1.2deg); }
+  .card-top { background:#DA291C; color:#fff; padding:26px 30px 24px; }
+  .t1 { display:flex; justify-content:space-between; align-items:baseline; }
+  .t1 .name { font-size:31px; font-weight:800; letter-spacing:.5px; }
+  .t1 .amt { font-size:44px; font-weight:800; font-family:"Avenir Next",sans-serif; }
+  .t2 { margin-top:12px; font-size:21px; opacity:.94; display:flex; gap:10px; }
+  .t2 span { background:rgba(255,255,255,.18); padding:5px 11px; border-radius:8px; white-space:nowrap; }
+
+  .rows { padding:8px 0 4px; }
+  .row { padding:13px 28px; border-bottom:1px dashed #F2E8CD; }
+  .row:last-child { border-bottom:none; }
+  .r1 { display:flex; justify-content:space-between; align-items:baseline; }
+  .who { font-size:27px; font-weight:800; color:#1A1613; }
+  .price { font-size:26px; font-weight:800; color:#DA291C; font-family:"Avenir Next",sans-serif; }
+  .what { font-size:23px; color:#4A4234; margin-top:6px; line-height:1.45; }
+  .alts { font-size:20px; color:#9A8E6E; margin-top:8px; }
+  .alts em { color:#B7630F; font-style:normal; font-weight:700; }
+  .share { font-size:20px; color:#7C7050; margin-top:6px; }
+
+  .card-foot { background:#FFFBF0; padding:18px 30px 22px; border-top:1px solid #F3E9CE; }
+  .party { font-size:20px; color:#5E5340; font-weight:600; }
+  .party b { color:#DA291C; }
+  .flag { margin-top:12px; font-size:20px; color:#8A6B1F; background:#FDF3D2;
+    border-left:5px solid #FFC72C; padding:10px 14px; border-radius:8px; }
+</style>
+</head>
+<body>
+<div class="grid"></div>
+<div class="blob1"></div>
+<div class="blob2"></div>
+
+<div class="wrap">
+  <div class="left">
+    <div class="badge"><span class="dot"></span>麦当劳 MCP · 拼单确认卡</div>
+
+    <h1>快点<span class="gold">麦当劳</span></h1>
+    <div class="en">MFASTER</div>
+
+    <div class="sub">一群人点麦当劳，<br>最后只需要<b>一张卡片</b>定下来。</div>
+
+    <div class="chips">
+      <div class="chip red">一屏看完</div>
+      <div class="chip">一句话改单</div>
+      <div class="chip">支付链接直接付</div>
+    </div>
+
+    <div class="foot">报单贴进来 → 出卡 → 拍板 → 下单</div>
+  </div>
+
+  <div class="card">
+    <div class="card-top">
+      <div class="t1">
+        <span class="name">麦当劳 · 拼单&nbsp;&nbsp;麦乐送</span>
+        <span class="amt">¥146.50</span>
+      </div>
+      <div class="t2">
+        <span>云栖花园 3 栋</span><span>宵夜</span><span>人均 ¥29.30</span><span>5 人 5 件</span>
+      </div>
+    </div>
+
+    <div class="rows">
+      <div class="row">
+        <div class="r1"><span class="who">张子涵</span><span class="price">¥26.00</span></div>
+        <div class="what">高达吉士双牛堡</div>
+        <div class="alts">换 <em>①培根芝士双牛堡 +¥1.00</em>　<em>②安格斯厚牛堡 +¥12.50</em></div>
+      </div>
+
+      <div class="row">
+        <div class="r1"><span class="who">王总</span><span class="price">¥25.50</span></div>
+        <div class="what">麦辣鸡腿汉堡</div>
+        <div class="alts">换 <em>①板烧鸡腿汉堡 —</em>　<em>②双层吉士堡 +¥3.00</em></div>
+      </div>
+
+      <div class="row">
+        <div class="r1"><span class="who">同事A</span><span class="price">¥86.00</span></div>
+        <div class="what">畅享吃鸡三人餐 ×1　<span class="share">3 人共用</span></div>
+        <div class="what" style="font-size:21px;color:#6B6250;">脆汁鸡琵琶腿 · 中薯条 · 无糖可乐中杯</div>
+      </div>
+
+      <div class="row">
+        <div class="r1"><span class="who">同事B</span><span class="price">¥28.67</span></div>
+        <div class="share">与同事A共用「畅享吃鸡三人餐」</div>
+      </div>
+
+      <div class="row">
+        <div class="r1"><span class="who">同事C</span><span class="price">¥28.66</span></div>
+        <div class="share">与同事A共用「畅享吃鸡三人餐」</div>
+      </div>
+    </div>
+
+    <div class="card-foot">
+      <div class="party">多人餐：畅享吃鸡三人餐 ×1 · <b>3 人合买 省 ¥1.90</b></div>
+      <div class="flag">需要拍板 1 件：三个「随便」已合并，可整份换</div>
+    </div>
+  </div>
+</div>
+</body>
+</html>
